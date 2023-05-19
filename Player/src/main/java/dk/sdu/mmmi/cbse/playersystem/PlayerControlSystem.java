@@ -29,6 +29,7 @@ public class PlayerControlSystem implements IEntityProcessingService {
             movingPart.setLeft(gameData.getKeys().isDown(LEFT));
             movingPart.setRight(gameData.getKeys().isDown(RIGHT));
             movingPart.setUp(gameData.getKeys().isDown(UP));
+
             if (gameData.getKeys().isPressed(SPACE)) {
                 for (BulletPluginService bulletPluginService : SPILocator.locateAll(BulletPluginService.class)) {
                     world.addEntity(bulletPluginService.createBullet(gameData, player));
@@ -50,6 +51,7 @@ public class PlayerControlSystem implements IEntityProcessingService {
         PositionPart positionPart = entity.getPart(PositionPart.class);
         float x = positionPart.getX();
         float y = positionPart.getY();
+
         float radians = positionPart.getRadians();
 
         shapex[0] = (float) (x + Math.cos(radians) * entity.getRadius());

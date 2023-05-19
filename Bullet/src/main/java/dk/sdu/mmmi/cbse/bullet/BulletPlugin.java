@@ -20,12 +20,6 @@ public class BulletPlugin implements BulletPluginService {
     public BulletPlugin() {
     }
 
-
-    public void stop(GameData gameData, World world) {
-        world.removeEntity(bullet);
-    }
-
-
     @Override
     public Entity createBullet(GameData gameData, Entity entity) {
         PositionPart positionPart = entity.getPart(PositionPart.class);

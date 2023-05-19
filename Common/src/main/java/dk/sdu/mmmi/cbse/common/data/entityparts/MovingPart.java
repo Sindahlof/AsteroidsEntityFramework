@@ -75,6 +75,7 @@ public class MovingPart
         }
 
         if (right) {
+            System.out.println("Hello");
             radians -= rotationSpeed * dt;
         }
 
@@ -82,6 +83,7 @@ public class MovingPart
         if (up) {
             dx += cos(radians) * acceleration * dt;
             dy += sin(radians) * acceleration * dt;
+            System.out.println("Moving up");
         }
 
         // deccelerating

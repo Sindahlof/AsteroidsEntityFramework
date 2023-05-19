@@ -58,6 +58,7 @@ public class GameData {
         for (Event event : events) {
             if (event.getClass().equals(type) && event.getSource().getID().equals(sourceID)) {
                 r.add(event);
+                System.out.println(event);
             }
         }
 

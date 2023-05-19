@@ -33,6 +33,7 @@ public class GameKeys {
 
     public boolean isDown(int k) {
         return keys[k];
+
     }
 
     public boolean isPressed(int k) {

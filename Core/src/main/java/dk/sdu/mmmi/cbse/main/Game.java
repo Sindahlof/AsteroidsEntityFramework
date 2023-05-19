@@ -73,7 +73,6 @@ public class Game
         update();
 
         draw();
-
         gameData.getKeys().update();
     }
 

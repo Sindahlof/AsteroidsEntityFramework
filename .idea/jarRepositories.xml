@@ -2,9 +2,19 @@
 <project version="4">
   <component name="RemoteRepositoriesConfiguration">
     <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Central Repository" />
+      <option name="url" value="https://repo.maven.apache.org/maven2" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="sesem4" />
       <option name="name" value="sesem4" />
       <option name="url" value="https://maven.pkg.github.com/sesem4/ShadedLibGDX" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="ShadedLibGDX" />
+      <option name="name" value="ShadedLibGDX" />
+      <option name="url" value="https://maven.pkg.github.com/sweat-tek/ShadedLibGDX" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="github" />
