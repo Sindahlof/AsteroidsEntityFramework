@@ -1,7 +1,5 @@
 package dk.sdu.mmmi.cbse;
 
-import dk.sdu.mmmi.cbse.astroid.Astroid;
-import dk.sdu.mmmi.cbse.bullet.Bullet;
 import dk.sdu.mmmi.cbse.common.data.Entity;
 import dk.sdu.mmmi.cbse.common.data.GameData;
 import dk.sdu.mmmi.cbse.common.data.World;
@@ -19,11 +17,8 @@ public class Collision implements IPostEntityProcessingService {
                 if (entity.getID().equals(collides.getID())) {
                     continue;
                 }
-                if (entity.getClass().equals(Bullet.class) && collides.getClass().equals(Bullet.class)){
-                    continue;
-                }
-
-                if (entity.getClass().equals(Astroid.class) && collides.getClass().equals(Astroid.class)){
+                System.out.println(entity.getType());
+                if (entity.getType().equals(collides.getType())){
                     continue;
                 }
 

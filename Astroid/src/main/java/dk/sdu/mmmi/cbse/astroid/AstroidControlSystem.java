@@ -1,6 +1,7 @@
 package dk.sdu.mmmi.cbse.astroid;
 import dk.sdu.mmmi.cbse.common.data.Entity;
 import dk.sdu.mmmi.cbse.common.data.GameData;
+import dk.sdu.mmmi.cbse.common.data.Type;
 import dk.sdu.mmmi.cbse.common.data.World;
 import dk.sdu.mmmi.cbse.common.data.entityparts.LifePart;
 import dk.sdu.mmmi.cbse.common.data.entityparts.MovingPart;
@@ -58,20 +59,22 @@ public class AstroidControlSystem implements IEntityProcessingService {
 
     private Entity[] createSmallAstroid(Entity entity, GameData gameData) {
         Entity[] smallAstroid = new Entity[2];
+        PositionPart positionPart = entity.getPart(PositionPart.class);
 
         for (int i = 0; i < smallAstroid.length; i++){
         float deacceleration = 10;
         float acceleration = 70;
         float maxSpeed = 300;
         float rotationSpeed = 5;
-        float x = gameData.getDisplayWidth() / 2;
-        float y = gameData.getDisplayHeight() / 2;
+        float x = positionPart.getX();
+        float y = positionPart.getY();
         float radians = 3.1415f / 2;
         LifePart lifePart = entity.getPart(LifePart.class);
         int f = lifePart.getLife() - 1;
 
         Entity astroidRock = new Astroid();
         astroidRock.setRadius(8);
+        astroidRock.setType(Type.ASTROID);
         astroidRock.add(new LifePart(f,69));
         astroidRock.add(new MovingPart(deacceleration, acceleration, maxSpeed, rotationSpeed));
         astroidRock.add(new PositionPart(x, y, radians));

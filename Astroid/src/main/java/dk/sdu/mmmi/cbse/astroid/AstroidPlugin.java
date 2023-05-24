@@ -2,6 +2,7 @@ package dk.sdu.mmmi.cbse.astroid;
 
 import dk.sdu.mmmi.cbse.common.data.Entity;
 import dk.sdu.mmmi.cbse.common.data.GameData;
+import dk.sdu.mmmi.cbse.common.data.Type;
 import dk.sdu.mmmi.cbse.common.data.World;
 import dk.sdu.mmmi.cbse.common.data.entityparts.LifePart;
 import dk.sdu.mmmi.cbse.common.data.entityparts.MovingPart;
@@ -34,6 +35,7 @@ public class AstroidPlugin implements IGamePluginService{
         float radians = 3.1415f / 2;
 
         Entity astroidRock = new Astroid();
+        astroidRock.setType(Type.ASTROID);
         astroidRock.setRadius(8);
         astroidRock.add(new LifePart(8,69));
         astroidRock.add(new MovingPart(deacceleration, acceleration, maxSpeed, rotationSpeed));

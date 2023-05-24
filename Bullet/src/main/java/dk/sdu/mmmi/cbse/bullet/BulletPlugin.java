@@ -3,6 +3,7 @@ package dk.sdu.mmmi.cbse.bullet;
 
 import dk.sdu.mmmi.cbse.common.data.Entity;
 import dk.sdu.mmmi.cbse.common.data.GameData;
+import dk.sdu.mmmi.cbse.common.data.Type;
 import dk.sdu.mmmi.cbse.common.data.World;
 import dk.sdu.mmmi.cbse.common.data.entityparts.LifePart;
 import dk.sdu.mmmi.cbse.common.data.entityparts.MovingPart;
@@ -33,6 +34,7 @@ public class BulletPlugin implements BulletPluginService {
 
         Entity bullet = new Bullet();
         bullet.setRadius(4);
+        bullet.setType(Type.BULLET);
 
         float bx = (float) cos(radians) * entity.getRadius() * bullet.getRadius();
         float by = (float) sin(radians) * entity.getRadius() * bullet.getRadius();
