@@ -17,12 +17,11 @@ public class Collision implements IPostEntityProcessingService {
                 if (entity.getID().equals(collides.getID())) {
                     continue;
                 }
-                System.out.println(entity.getType());
+
                 if (entity.getType().equals(collides.getType())){
                     continue;
                 }
 
-                //System.out.println(life.isDead());
                 if (life.isDead()){
                     world.removeEntity(entity);
                 }
