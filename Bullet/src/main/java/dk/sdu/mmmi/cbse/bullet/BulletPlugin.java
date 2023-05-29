@@ -25,7 +25,7 @@ public class BulletPlugin implements BulletPluginService {
     public Entity createBullet(GameData gameData, Entity entity) {
         PositionPart positionPart = entity.getPart(PositionPart.class);
         float deacceleration = 0;
-        float acceleration = 400;
+        float acceleration = 40000;
         float maxSpeed = 400;
         float rotationSpeed = 0;
         float radians = positionPart.getRadians();
