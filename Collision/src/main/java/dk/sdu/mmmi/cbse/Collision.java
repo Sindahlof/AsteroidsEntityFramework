@@ -12,19 +12,17 @@ public class Collision implements IPostEntityProcessingService {
     public void process(GameData gameData, World world) {
         for (Entity entity : world.getEntities()){
             for (Entity collides : world.getEntities()){
+
                 LifePart life = entity.getPart(LifePart.class);
                 LifePart col = collides.getPart(LifePart.class);
-                if (entity.getID().equals(collides.getID())) {
-                    continue;
-                }
-
-                if (entity.getType().equals(collides.getType())){
-                    continue;
-                }
 
                 if (life.isDead()){
                     world.removeEntity(entity);
                 }
+                if (col.isDead()){
+                    world.removeEntity(collides);
+                }
+
                 if(pythagaros(entity,collides)){
                     int fu = life.getLife() - 1;
                     int bar = col.getLife() - 1;

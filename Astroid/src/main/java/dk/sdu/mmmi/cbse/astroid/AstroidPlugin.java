@@ -49,7 +49,7 @@ public class AstroidPlugin implements IGamePluginService{
 
 
     @Override
-    public void stop(GameData gameData, World world) {
+    public void stop(World world) {
         //Remove entites
         world.removeEntity(astroid);
     }
