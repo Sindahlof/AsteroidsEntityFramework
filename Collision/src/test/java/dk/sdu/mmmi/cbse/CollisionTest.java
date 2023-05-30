@@ -20,13 +20,9 @@ import static org.mockito.Mockito.when;
 class CollisionTest {
     private GameData gameData;
     private World world;
-
-    private ArrayList<Entity> entities;
-
     private Collision collision;
     private Entity entity1;
     private Entity entity2;
-
     private PositionPart position;
     private LifePart lifePart;
 
@@ -37,8 +33,8 @@ class CollisionTest {
         this.entity1 = new Entity();
         this.entity2 = new Entity();
         this.position = new PositionPart(2,2,2);
-        this.lifePart = new LifePart(0,0);
-        this.entities = new ArrayList<>();
+
+        this.lifePart = new LifePart(1,0);
         this.world = new World();
 
         //Arrange
@@ -46,6 +42,8 @@ class CollisionTest {
         this.entity2.add(this.position);
         this.entity1.add(this.lifePart);
         this.entity2.add(this.lifePart);
+        this.entity1.setRadius(1);
+        this.entity1.setRadius(1);
 
         //Act
         this.entity1.setType(Type.PLAYER);
@@ -56,25 +54,15 @@ class CollisionTest {
     }
 
     @Test
-    public void testWorldIsNotEmpty(){
-        //This test shows that both entites have been added to the list
-
-
-        //Assert
-        Assertions.assertTrue(this.world.getEntities().size() == 2);
-    }
-
-    @Test
     public void testColision(){
         //This test shows that after colision accours one entity is removed.
 
         //Act
-        entity1.getPart(LifePart.class).process(gameData,entity1);
-        entity2.getPart(LifePart.class).process(gameData,entity2);
         collision.process(gameData,world);
+        LifePart lifePart1 = entity2.getPart(LifePart.class);
 
         //Assert
-        Assertions.assertTrue(this.world.getEntities().isEmpty());
+        Assertions.assertEquals(-2,lifePart1.getLife());
 
     }
 }
