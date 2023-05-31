@@ -13,6 +13,10 @@ public class Collision implements IPostEntityProcessingService {
         for (Entity entity : world.getEntities()){
             for (Entity collides : world.getEntities()){
 
+                if(entity.getType().equals(collides.getType())){
+                    continue;
+                }
+
                 LifePart life = entity.getPart(LifePart.class);
                 LifePart col = collides.getPart(LifePart.class);
 

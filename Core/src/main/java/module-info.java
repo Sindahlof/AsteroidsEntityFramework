@@ -4,7 +4,7 @@ import dk.sdu.mmmi.cbse.common.services.*;
 module Core {
     requires Common;
     requires java.desktop;
-    requires ShadedLibGDX;
+    requires com.badlogic.gdx;
     requires spring.context;
 
     uses dk.sdu.mmmi.cbse.common.services.IEntityProcessingService;

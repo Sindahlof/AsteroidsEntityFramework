@@ -13,17 +13,17 @@
 
     <repositories>
         <repository>
-            <id>github</id>
+            <id>ShadedLibGDX</id>
             <name>GitHub sweat-tek Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/sesem4/ShadedLibGDX</url>
+            <url>https://maven.pkg.github.com/sweat-tek/ShadedLibGDX</url>
         </repository>
     </repositories>
 
     <dependencies>
         <dependency>
-            <groupId>dk.sdu.sesem4</groupId>
+            <groupId>dk.sdu.mmmi.cbse</groupId>
             <artifactId>shadedlibgdx</artifactId>
-            <version>1.0.7</version>
+            <version>1.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
@@ -87,7 +87,7 @@
                         <configuration>
                             <artifactItems>
                                 <artifactItem>
-                                    <groupId>dk.sdu.sesem4</groupId>
+                                    <groupId>dk.sdu.mmmi.cbse</groupId>
                                     <artifactId>shadedlibgdx</artifactId>
                                     <overWrite>true</overWrite>
                                     <outputDirectory>../libs</outputDirectory>

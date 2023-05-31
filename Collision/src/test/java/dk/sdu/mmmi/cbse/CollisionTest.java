@@ -60,9 +60,10 @@ class CollisionTest {
         //Act
         collision.process(gameData,world);
         LifePart lifePart1 = entity2.getPart(LifePart.class);
+        System.out.println(lifePart1.getLife());
 
         //Assert
-        Assertions.assertEquals(-2,lifePart1.getLife());
+        Assertions.assertEquals(-1,lifePart1.getLife());
 
     }
 }
