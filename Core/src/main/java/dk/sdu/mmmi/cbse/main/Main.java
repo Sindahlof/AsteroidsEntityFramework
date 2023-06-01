@@ -19,7 +19,7 @@ public class Main {
 		Lwjgl3ApplicationConfiguration config = new Lwjgl3ApplicationConfiguration();
 		config.setForegroundFPS(60);
 		config.setResizable(true);
-		config.setTitle("Nelda");
+		config.setTitle("Asteroid");
 		config.setWindowedMode(1000, 600);
 
 
